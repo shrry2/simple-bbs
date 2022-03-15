@@ -1,0 +1,28 @@
+{
+  "root": "apps/simple-bbs-e2e",
+  "sourceRoot": "apps/simple-bbs-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/simple-bbs-e2e/cypress.json",
+        "devServerTarget": "simple-bbs:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "simple-bbs:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/simple-bbs-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["simple-bbs"]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "simple-bbs": "apps/simple-bbs",
+    "simple-bbs-e2e": "apps/simple-bbs-e2e"
+  }
+}
