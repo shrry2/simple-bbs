@@ -1,0 +1,228 @@
+{
+  "graph": {
+    "nodes": {
+      "simple-bbs-e2e": {
+        "name": "simple-bbs-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/simple-bbs-e2e",
+          "sourceRoot": "apps/simple-bbs-e2e/src",
+          "projectType": "application",
+          "targets": {
+            "e2e": {
+              "executor": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/simple-bbs-e2e/cypress.json",
+                "devServerTarget": "simple-bbs:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "simple-bbs:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "executor": "@nrwl/linter:eslint",
+              "outputs": [
+                "{options.outputFile}"
+              ],
+              "options": {
+                "lintFilePatterns": [
+                  "apps/simple-bbs-e2e/**/*.{js,ts}"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "implicitDependencies": [
+            "simple-bbs"
+          ],
+          "files": [
+            {
+              "file": "apps/simple-bbs-e2e/.eslintrc.json",
+              "hash": "4c5989b23b5aa8cc7aba2a07d1ae7daee19c1555"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/cypress.json",
+              "hash": "3fb1646bf62a1024af1b8ab8c54001ae556aae3e"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/project.json",
+              "hash": "34db0f23b3394283de681753cad2955817ab6884"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/src/fixtures/example.json",
+              "hash": "294cbed6ce9e0b948b787452e8676aee486cb3be"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/src/integration/app.spec.ts",
+              "hash": "0d74cec50673d6099912c38aedb39f4c3593b46f"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/src/support/app.po.ts",
+              "hash": "32934246969c2ecb827ac05677785933a707a54d"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/src/support/commands.ts",
+              "hash": "310f1fa0e043ffebbbcf575c5a4d17f13a6b14d6"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/src/support/index.ts",
+              "hash": "3d469a6b6cf31eb66117d73e278bcf74f398f1db"
+            },
+            {
+              "file": "apps/simple-bbs-e2e/tsconfig.json",
+              "hash": "c4f818ecd40fbce82c3e08bf25cde3043970f8f3"
+            }
+          ]
+        }
+      },
+      "simple-bbs": {
+        "name": "simple-bbs",
+        "type": "app",
+        "data": {
+          "root": "apps/simple-bbs",
+          "sourceRoot": "apps/simple-bbs",
+          "projectType": "application",
+          "targets": {
+            "build": {
+              "executor": "@nrwl/next:build",
+              "outputs": [
+                "{options.outputPath}"
+              ],
+              "defaultConfiguration": "production",
+              "options": {
+                "root": "apps/simple-bbs",
+                "outputPath": "dist/apps/simple-bbs"
+              },
+              "configurations": {
+                "production": {}
+              }
+            },
+            "serve": {
+              "executor": "@nrwl/next:server",
+              "options": {
+                "buildTarget": "simple-bbs:build",
+                "dev": true
+              },
+              "configurations": {
+                "production": {
+                  "buildTarget": "simple-bbs:build:production",
+                  "dev": false
+                }
+              }
+            },
+            "export": {
+              "executor": "@nrwl/next:export",
+              "options": {
+                "buildTarget": "simple-bbs:build:production"
+              }
+            },
+            "test": {
+              "executor": "@nrwl/jest:jest",
+              "outputs": [
+                "coverage/apps/simple-bbs"
+              ],
+              "options": {
+                "jestConfig": "apps/simple-bbs/jest.config.js",
+                "passWithNoTests": true
+              }
+            },
+            "lint": {
+              "executor": "@nrwl/linter:eslint",
+              "outputs": [
+                "{options.outputFile}"
+              ],
+              "options": {
+                "lintFilePatterns": [
+                  "apps/simple-bbs/**/*.{ts,tsx,js,jsx}"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/simple-bbs/.eslintrc.json",
+              "hash": "f22a7758c261842bcacdd7060db8a8f203fd1fda"
+            },
+            {
+              "file": "apps/simple-bbs/index.d.ts",
+              "hash": "7ba08fa17ccbb3d5eaa4d9c7b435bd44ff43f330"
+            },
+            {
+              "file": "apps/simple-bbs/jest.config.js",
+              "hash": "a8823d8af899b5731201b3049d361cf3acd8e708"
+            },
+            {
+              "file": "apps/simple-bbs/next-env.d.ts",
+              "hash": "4f11a03dc6cc37f2b5105c08f2e7b24c603ab2f4"
+            },
+            {
+              "file": "apps/simple-bbs/next.config.js",
+              "hash": "7922ea7e424f288b2b5118330010a9abb0cf1598",
+              "deps": [
+                "npm:@nrwl/next"
+              ]
+            },
+            {
+              "file": "apps/simple-bbs/pages/_app.tsx",
+              "hash": "9dd82549962d3075becd4b2bc0a4935f388613e1",
+              "deps": [
+                "npm:next"
+              ]
+            },
+            {
+              "file": "apps/simple-bbs/pages/index.module.scss",
+              "hash": "8a13e21cb3114dc597001050a8afda0a6add8b37"
+            },
+            {
+              "file": "apps/simple-bbs/pages/index.tsx",
+              "hash": "22b71e67741a3ff99aa6d98963f0d2d134f8dae6"
+            },
+            {
+              "file": "apps/simple-bbs/pages/styles.css",
+              "hash": "7fe31fd45429117eb5aeef6a5d9332da9d9dd9c0"
+            },
+            {
+              "file": "apps/simple-bbs/project.json",
+              "hash": "826a7ef238393507c2f29ecfa849663c4be788bc"
+            },
+            {
+              "file": "apps/simple-bbs/public/.gitkeep",
+              "hash": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+            },
+            {
+              "file": "apps/simple-bbs/specs/index.spec.tsx",
+              "hash": "42c94022afd1c1c396f85b24a08d75984b8adb9c",
+              "deps": [
+                "npm:react",
+                "npm:@testing-library/react"
+              ]
+            },
+            {
+              "file": "apps/simple-bbs/tsconfig.json",
+              "hash": "7f521fe099b3cce68f980223b5ac7c0621a678fd"
+            },
+            {
+              "file": "apps/simple-bbs/tsconfig.spec.json",
+              "hash": "5b4e7354abd2b2b9a63bcbc0bb5720893b595452"
+            }
+          ]
+        }
+      }
+    },
+    "dependencies": {
+      "simple-bbs-e2e": [
+        {
+          "source": "simple-bbs-e2e",
+          "target": "simple-bbs",
+          "type": "implicit"
+        }
+      ],
+      "simple-bbs": []
+    }
+  },
+  "affectedProjects": [],
+  "criticalPath": []
+}
